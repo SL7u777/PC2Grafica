@@ -18,7 +18,8 @@ Basado en [letras_uni](https://github.com/PeterTXS09/letras_uni).
 
 1. **Recolección**: `main.py` es una app Flask con un lienzo. Pide siempre la categoría con menos dibujos y guarda cada dibujo como `datos/<categoria>/<categoria>_0001.png`, `_0002.png`, etc.
 2. **Dataset**: la ruta `/prepare` recorta, centra y lleva cada dibujo a 64×64, y genera `X.npy` y `y.npy`.
-3. **Entrenamiento**: `entrenamiento.ipynb` (Google Colab) entrena una CNN, muestra las métricas y al final permite clasificar cualquier imagen de `datos/` con el modelo entrenado.
+3. **Entrenamiento**: `entrenamiento.ipynb` (Google Colab) entrena una CNN, muestra las métricas y guarda el modelo en `modelo.keras`.
+4. **Demo**: la pestaña *Demo* de la app carga `modelo.keras`: se dibuja y muestra la frase, la confianza y las probabilidades de cada categoría. Estos dibujos no se guardan en el dataset.
 
 
 ## Resultados
@@ -62,3 +63,5 @@ python main.py
 ```
 
 Abrir http://127.0.0.1:5000, dibujar y enviar con **Enter** (borrar con **Esc**). Al terminar, visitar http://127.0.0.1:5000/prepare para generar `X.npy` y `y.npy`.
+
+Para la pestaña *Demo* (http://127.0.0.1:5000/demo), ejecutar antes `entrenamiento.ipynb` en esta carpeta para generar `modelo.keras`.
