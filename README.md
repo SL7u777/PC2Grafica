@@ -64,4 +64,4 @@ python main.py
 
 Abrir http://127.0.0.1:5000, dibujar y enviar con **Enter** (borrar con **Esc**). Al terminar, visitar http://127.0.0.1:5000/prepare para generar `X.npy` y `y.npy`.
 
-Para la pestaña *Demo* (http://127.0.0.1:5000/demo), ejecutar antes `entrenamiento.ipynb` en esta carpeta para generar `modelo.keras`.
+La pestaña *Demo* (http://127.0.0.1:5000/demo) usa el modelo ya entrenado `modelo.keras`, incluido en el repositorio. Para reentrenarlo, ejecutar `entrenamiento.ipynb` en esta carpeta; los resultados pueden variar ligeramente entre ejecuciones.
