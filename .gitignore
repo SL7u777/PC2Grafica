@@ -1,0 +1,5 @@
+.venv/
+.venv_notebook/
+__pycache__/
+.ipynb_checkpoints/
+modelo.keras
