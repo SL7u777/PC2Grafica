@@ -23,26 +23,26 @@ Basado en [letras_uni](https://github.com/PeterTXS09/letras_uni).
 
 ## Resultados
 
-2650 dibujos (530 por categoría), divididos en 70% entrenamiento, 15% validación y 15% prueba. Accuracy en prueba: **91.2%**.
+2650 dibujos (530 por categoría), divididos en 70% entrenamiento, 15% validación y 15% prueba. Accuracy en prueba: **93.0%**.
 
 | Categoría | Precision | Recall | F1 |
 |---|---|---|---|
-| cama | 0.872 | 0.938 | 0.904 |
-| celular | 0.905 | 0.962 | 0.933 |
-| inodoro | 0.894 | 0.950 | 0.921 |
-| jeringa | 0.986 | 0.875 | 0.927 |
-| vaso | 0.917 | 0.835 | 0.874 |
+| cama | 0.905 | 0.950 | 0.927 |
+| celular | 0.917 | 0.975 | 0.945 |
+| inodoro | 0.926 | 0.938 | 0.932 |
+| jeringa | 0.986 | 0.912 | 0.948 |
+| vaso | 0.920 | 0.873 | 0.896 |
 
 ## Observaciones
 
-- **Formas rectangulares**: vasos dibujados como un rectángulo alto se confunden con celular (4 casos).
-- **Figuras alargadas**: jeringa → cama es el error más frecuente (7 casos); el émbolo y la aguja se parecen a las patas de una cama vista de lado.
-- **Detalles curvos**: tazas con asa o con vapor se confundieron con inodoro (5 casos).
+- **Formas rectangulares**: vasos dibujados como un rectángulo alto se confunden con celular (3 casos).
+- **Figuras alargadas**: jeringa → cama es el error más frecuente (5 casos); el émbolo y la aguja se parecen a las patas de una cama vista de lado.
+- **Detalles curvos**: tazas con asa o con vapor se confundieron con inodoro (4 casos).
 - **Cama recibe errores** de otras clases (precision más baja): ante formas "de caja", la red tiende a elegirla.
-- **Jeringa es conservadora**: cuando la red la predice casi siempre acierta (precision 98.6%), pero se le escapa 1 de cada 8 (recall 87.5%).
-- **Más datos, mejor resultado**: con 250 dibujos por categoría se obtuvo 88.8%; con 530, 91.2%.
+- **Jeringa es conservadora**: cuando la red la predice casi siempre acierta (precision 98.6%), pero se le escapa 1 de cada 11 (recall 91.2%).
+- **Más datos, mejor resultado**: con 250 dibujos por categoría se obtuvo 88.8%; con 530, 93.0%.
 - **La red aprende la forma típica**: un celular dibujado como auricular antiguo generó dudas, porque en los datos los celulares son rectángulos.
-- **Seguridad**: la red puede acertar con poca seguridad (un inodoro reconocido con 48%).
+- **Seguridad**: la red puede equivocarse estando bastante segura (un inodoro tomado por celular con 68%).
 - **Sin sobreajuste**: las curvas de entrenamiento y validación avanzan juntas.
 
 ## Conclusiones
